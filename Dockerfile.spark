@@ -1,0 +1,48 @@
+# Start from official Spark image
+FROM apache/spark:3.4.1
+
+# Switch to root to install extra JARs
+USER root
+
+# ---------------------------
+# 1. Add PostgreSQL JDBC driver
+# ---------------------------
+RUN wget -q https://repo1.maven.org/maven2/org/postgresql/postgresql/42.7.3/postgresql-42.7.3.jar -P /opt/spark/jars/ && \
+    chown spark:spark /opt/spark/jars/postgresql-42.7.3.jar
+
+# ---------------------------
+# 2. Add Hadoop AWS + AWS SDK (for MinIO / S3)
+# ---------------------------
+# Use Hadoop 3.3.1 to match Spark 3.4.1
+RUN curl -sL -o /opt/spark/jars/hadoop-aws-3.3.1.jar \
+        https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.1/hadoop-aws-3.3.1.jar && \
+    curl -sL -o /opt/spark/jars/aws-java-sdk-bundle-1.11.901.jar \
+        https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.11.901/aws-java-sdk-bundle-1.11.901.jar && \
+    chown spark:spark /opt/spark/jars/hadoop-aws-3.3.1.jar /opt/spark/jars/aws-java-sdk-bundle-1.11.901.jar
+
+
+    
+# ---------------------------
+# Install Python packages
+# ---------------------------
+# Uninstall any old versions of yfinance and multitasking, then install compatible versions
+RUN pip uninstall -y yfinance multitasking || true && \
+    pip install --no-cache-dir \
+        boto3 \
+        requests \
+        pandas \
+        yfinance==0.2.28 \
+        multitasking==0.0.11 \
+        psycopg2-binary \
+        python-dotenv
+
+
+# ---------------------------
+# 3. Switch back to spark user
+# ---------------------------
+USER spark
+
+# ---------------------------
+# 4. Ensure PATH and classpath include our custom jars
+# ---------------------------
+ENV PATH="/opt/spark/bin:${PATH}"
