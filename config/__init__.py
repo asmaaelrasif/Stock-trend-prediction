@@ -1,0 +1,12 @@
+DB_HOST = "postgres-processed"
+DB_NAME = "stockdb"
+DB_USER = "stock"
+DB_PASSWORD = "stock"
+
+CSV_FILE = "/opt/airflow/work-dir/data/historical-data/AAPL.csv"
+CSV_URL = "https://raw.githubusercontent.com/md1509/Apple_historical_data/main/AAPL.csv"
+CHUNK_DIR = "/opt/airflow/work-dir/data/monthly-chunks/"
+MINIO_ENDPOINT = "http://minio:9000"
+MINIO_ACCESS_KEY = "minioadmin"
+MINIO_SECRET_KEY = "minioadmin"
+BUCKET_NAME = "aapl-datalake"
