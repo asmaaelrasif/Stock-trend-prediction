@@ -128,25 +128,101 @@ The root directory (Stock-trend-prediction/) contains the following structure:
 ├── init.sql             \# SQL script to initialize PostgreSQL schemas/tables  
 └── .env                 \# Environment variables and secrets (mandatory)
 
-The root directory (Stock-trend-prediction/) contains the following structure:
 
-```
-Stock-trend-prediction/
-│
-├──  config/              # Configuration files and settings for services (e.g., Spark config)
-├──  dags/                # Apache Airflow DAG definitions
-├──  data/                # Local storage for raw data files
-├──  logs/                # Log output for Airflow and other services
-├──  plugins/             # Airflow custom operators, hooks, and extensions
-├──  scripts/             # General utility scripts (e.g., MinIO bucket setup)
-├──  spark-scripts/       # PySpark transformation scripts (feature engineering)
-│
-├──  Dockerfile.airflow   # Dockerfile for building the custom Airflow image
-├──  Dockerfile.spark     # Dockerfile for building the custom Spark image
-├──  docker-compose.yml   # Service orchestration for all components
-├──  init.sql             # SQL script to initialize PostgreSQL schemas/tables
-└──  .env                 # Environment variables and secrets (mandatory)
-```
+---
+
+## 📁 Project Structure
+
+### Root Directory: `Stock-trend-prediction/`
+
+The root directory contains the following structure organized in a clean, modular architecture:
+
+<table>
+<thead>
+<tr>
+<th width="25%">Path</th>
+<th width="15%">Type</th>
+<th width="60%">Description</th>
+</tr>
+</thead>
+<tbody>
+
+<!-- Directories -->
+<tr>
+<td><code>config/</code></td>
+<td>📂 <strong>Directory</strong></td>
+<td>Configuration files and settings for services (e.g., Spark config)</td>
+</tr>
+
+<tr>
+<td><code>dags/</code></td>
+<td>📂 <strong>Directory</strong></td>
+<td>Apache Airflow DAG definitions</td>
+</tr>
+
+<tr>
+<td><code>data/</code></td>
+<td>📂 <strong>Directory</strong></td>
+<td>Local storage for raw data files</td>
+</tr>
+
+<tr>
+<td><code>logs/</code></td>
+<td>📂 <strong>Directory</strong></td>
+<td>Log output for Airflow and other services</td>
+</tr>
+
+<tr>
+<td><code>plugins/</code></td>
+<td>📂 <strong>Directory</strong></td>
+<td>Airflow custom operators, hooks, and extensions</td>
+</tr>
+
+<tr>
+<td><code>scripts/</code></td>
+<td>📂 <strong>Directory</strong></td>
+<td>General utility scripts (e.g., MinIO bucket setup)</td>
+</tr>
+
+<tr>
+<td><code>spark-scripts/</code></td>
+<td>📂 <strong>Directory</strong></td>
+<td>PySpark transformation scripts (feature engineering)</td>
+</tr>
+
+<!-- Files -->
+<tr>
+<td><code>Dockerfile.airflow</code></td>
+<td>🐳 <strong>Docker</strong></td>
+<td>Dockerfile for building the custom Airflow image</td>
+</tr>
+
+<tr>
+<td><code>Dockerfile.spark</code></td>
+<td>🐳 <strong>Docker</strong></td>
+<td>Dockerfile for building the custom Spark image</td>
+</tr>
+
+<tr>
+<td><code>docker-compose.yml</code></td>
+<td>🐙 <strong>Compose</strong></td>
+<td>Service orchestration for all components</td>
+</tr>
+
+<tr>
+<td><code>init.sql</code></td>
+<td>🗄️ <strong>SQL</strong></td>
+<td>SQL script to initialize PostgreSQL schemas/tables</td>
+</tr>
+
+<tr>
+<td><code>.env</code></td>
+<td>🔐 <strong>Config</strong></td>
+<td>Environment variables and secrets <em>(mandatory)</em></td>
+</tr>
+
+</tbody>
+</table>
 
 ---
 
