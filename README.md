@@ -38,8 +38,10 @@ The pipeline's primary goal is to identify trend directions (Up, Down, Neutral) 
 | `daily_return` |  Momentum | Percentage change in closing price | Fundamental measure of daily performance |
 | `ma_10d` |  Trend | 10-day Simple Moving Average | Identify short-term price trends and crossover signals |
 | `ma_20d` |  Trend | 20-day Simple Moving Average | Identify medium-term price trends and crossover signals |
-| `volatility_10d` | ⚠️Risk | 10-day rolling standard deviation of returns | Quantify short-term market risk |
+| `volatility_10d` | Risk | 10-day rolling standard deviation of returns | Quantify short-term market risk |
 | `trend_label` |  Classification | Categorized based on `daily_return` vs. threshold | **Target variable** for predictive analysis |
+
+
 **Trend Label Classification Logic:** The classification uses a simple $\\pm 0.1\\%$ threshold on the daily return:
 
 * **Uptrend:** $\\texttt{daily\\\_return} \> 0.1\\%$  
