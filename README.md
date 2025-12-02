@@ -128,6 +128,30 @@ The root directory (Stock-trend-prediction/) contains the following structure:
 ├── init.sql             \# SQL script to initialize PostgreSQL schemas/tables  
 └── .env                 \# Environment variables and secrets (mandatory)
 
+The root directory (Stock-trend-prediction/) contains the following structure:
+
+```
+Stock-trend-prediction/
+│
+├──  config/              # Configuration files and settings for services (e.g., Spark config)
+├──  dags/                # Apache Airflow DAG definitions
+├──  data/                # Local storage for raw data files
+├──  logs/                # Log output for Airflow and other services
+├──  plugins/             # Airflow custom operators, hooks, and extensions
+├──  scripts/             # General utility scripts (e.g., MinIO bucket setup)
+├──  spark-scripts/       # PySpark transformation scripts (feature engineering)
+│
+├──  Dockerfile.airflow   # Dockerfile for building the custom Airflow image
+├──  Dockerfile.spark     # Dockerfile for building the custom Spark image
+├──  docker-compose.yml   # Service orchestration for all components
+├──  init.sql             # SQL script to initialize PostgreSQL schemas/tables
+└──  .env                 # Environment variables and secrets (mandatory)
+```
+
+---
+
+
+
 ## **7\. Authors**
 
 * Mohammed Darwish  
