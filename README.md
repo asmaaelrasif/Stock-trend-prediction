@@ -73,7 +73,7 @@ docker compose up airflow-init
 docker ps
 
 6. Access the services:  
-* **Airflow:** http://localhost:8080 (Orchestration)  
+* **Airflow:** http://localhost:8082 (Orchestration)  
 * **pgAdmin:** http://localhost:5050/ (PostgreSQL GUI)  
 * **MinIO:** http://localhost:9001 (Data Lake UI)  
 * **Metabase:** http://localhost:3000 (Dashboard)
